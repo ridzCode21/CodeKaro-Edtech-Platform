@@ -1,0 +1,255 @@
+/* write your css here */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+html,body{
+    overflow-x:hidden ;
+    box-sizing: border-box;
+}
+
+.gas {
+    --blur: 1.75rem;
+    --box-blur: calc(0.5 * var(--blur));
+    --glow: var(--color);
+    --size: 12rem;
+    align-items: center;
+    border-radius: 12px;
+    border: 4px solid currentColor;
+    box-shadow: 
+      /* --- "glass" tube --- */
+      /* inside */ inset 0 0 0 2px rgba(0, 0, 0, 0.15),
+      /* outside */      0 0 0 2px rgba(0, 0, 0, 0.15),
+      /* --- glow --- */
+      /* inside */ inset 0 0 var(--box-blur) var(--glow),
+      /* outside */      0 0 var(--box-blur) var(--glow);
+    color: var(--color, white);
+    > * {
+      margin: 0;
+      padding: 0;
+    }
+    &.ne { --color: #FDA802; filter: brightness(110%); }
+    &.ar { --color: #E555C7; filter: brightness(125%); }
+    &.kr { --color: #B7E7F7; filter: saturate(200%); }
+    &.xe { --color: #C4C4C6; filter: brightness(105%); }
+   
+  }
+
+  
+  @keyframes scale {
+    0%, 100% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.2);
+    }
+  }
+  
+ .yes{
+   
+  background: linear-gradient(rgba(102, 116, 204, 0.18) 0%, rgba(0, 0, 0, 0.18) 34.18%), rgb(13, 13, 13);
+
+ }
+  
+  .glassmorphic-sphere {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+
+   
+  }
+  
+  .bg-glassmorphism1 {
+   
+    animation: scale 5s infinite ease-in-out;
+    background: linear-gradient(rgba(102, 116, 204, 0.18) 0%, rgba(0, 0, 0, 0.18) 34.18%), rgb(13, 13, 13); width: 60.5046rem; height: 60.5067rem;
+  }
+  
+  .bg-glassmorphism2 {
+    animation: scale 5s infinite ease-in-out;
+    /* animation-delay: 2.5s; */
+    background: linear-gradient(rgba(102, 116, 204, 0.18) 8.36%, rgba(0, 0, 0, 0.18) 16.6%), rgb(13, 13, 13); width: 46.9169rem; height: 46.9169rem;
+
+  }
+  .bg-glassmorphism3 {
+    animation: scale 5s infinite ease-in-out;
+    /* animation-delay: 2.5s; */
+    background: linear-gradient(rgba(102, 116, 204, 0.18) 0.82%, rgba(0, 0, 0, 0.18) 32.96%), rgb(13, 13, 13); width: 42.5512rem; height: 42.5512rem;
+  }
+  .carditem {
+    background: #070707;
+    padding : 2px; /* border width */ 
+    border-radius: 20px;
+}
+.inner{
+     transition: background 300ms ease-in-out;
+     border-radius: 20px;
+}
+.blob {
+  filter: blur(120px);
+  position: absolute;
+  /* z-index: -1; to keep it at below everything else */
+  top: 70px; /* to align it at top */
+  left: 250px; /* to align it at left */
+  /* width: ;
+  height: 250px; */
+  border-radius: 50%; /* to make it circular */
+  
+  
+}
+
+.card:hover > .inner {
+  background: rgb(26, 26, 26, 0.6);
+  backdrop-filter: blur(80px);
+}
+.logo{
+  background: linear-gradient(to right, #121FCF 51%, #CF14CA 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.navbar-shadow{
+   box-shadow: #6674cc40 0px 4px 10px 0px
+}
+.cover{
+   background-image: url('./assets/Images/Clarence.png');
+}
+
+.form-style {
+  --tw-bg-opacity: 1;
+  --tw-text-opacity: 1;
+  --tw-shadow: 0 1px 0 0;
+  --tw-shadow-colored: 0 1px 0 0 var(--tw-shadow-color);
+  --tw-shadow-color: hsla(0,0%,100%,.5);
+  --tw-shadow: var(--tw-shadow-colored);
+  background-color: rgb(44 51 63/var(--tw-bg-opacity));
+  border-radius: .5rem;
+  box-shadow: 0 0 #0000,0 0 #0000,var(--tw-shadow);
+  box-shadow: var(--tw-ring-offset-shadow,0 0 #0000),var(--tw-ring-shadow,0 0 #0000),var(--tw-shadow);
+  color: rgb(241 242 255/var(--tw-text-opacity));
+  font-size: 16px;
+  line-height: 24px;
+  padding: .75rem;
+}
+
+
+.completed:after {
+  content: "";
+  z-index: 0.5;
+  position: absolute;
+  width:50px;
+  height:50px;
+  top: -5px;
+  right: 0;
+  bottom: 0;
+  left: -70px;
+  background: linear-gradient(-45deg, #F9F9F9 0%, #45ec59 100% );
+  transform: translate3d(76px, 20px, 0) scale(0.95);
+  filter: blur(20px);
+  opacity: var(0.7);
+  transition: opacity 0.3s;
+  border-radius: inherit;
+}
+
+/* 
+* Prevents issues when the parent creates a 
+* stacking context. (For example, using the transform
+* property )
+*/
+.pending:after {
+  content: "";
+  z-index: 0.5;
+  position: absolute;
+  width:50px;
+  height:50px;
+  top: -5px;
+  right: 0;
+  bottom: 0;
+  left: -70px;
+  background: linear-gradient(-45deg, #F9F9F9 0%, #ef476f 100% );
+  transform: translate3d(76px, 20px, 0) scale(0.95);
+  filter: blur(20px);
+  opacity: var(0.7);
+  transition: opacity 0.3s;
+  border-radius: inherit;
+}
+
+.highlightedText{
+  background:  linear-gradient(118deg, #833ab4 -2.4%, #fd1d1d 52.25%, #fcb045 106.89%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.swiper-pagination-bullet{
+  transform: translateY(180%);
+  background-color: rgb(255, 255, 255) !important;
+}
+.yellowButton {
+  --tw-bg-opacity: 1;
+  --tw-text-opacity: 1;
+  background-color: rgb(255 214 10/var(--tw-bg-opacity));
+  border-radius: .375rem;
+  color: rgb(0 8 20/var(--tw-text-opacity));
+  cursor: pointer;
+  font-weight: 600;
+  padding: 8px 20px;
+}
+.blackButton {
+  --tw-bg-opacity: 1;
+  background-color: rgb(22 29 41/var(--tw-bg-opacity));
+  border-radius: .375rem;
+  cursor: pointer;
+  font-weight: 600;
+  padding: 8px 20px;
+}
+
+details[open] summary ~ * {
+  animation: sweep .5s ease-in-out;
+}
+
+@keyframes sweep {
+  0%    {opacity: 0; margin-left: -18px}
+  100%  {opacity: 1; margin-left: 0px}
+}
+
+/* detalil tag opening animation */
+details.detailanimatation{
+
+  transition: all 0.5s linear;
+  max-height: 100px;
+  overflow: hidden;
+
+}
+details.detailanimatation[open]{
+  max-height: 1000px;
+}
+
+/* rotate className arrow on detail open */
+details[open] summary .arrow {
+  transform: rotatex(180deg);
+  transition: all 0.1s linear;
+}
+
+.video{
+  filter: drop-shadow(20px 20px 0px  rgb(255, 255, 255));
+  }
+  
+  .videograd{
+      position: absolute;
+      width: 372.95px;
+      height: 257.05px;
+      
+      
+      /* Gradient/05 */
+      
+      background: linear-gradient(118.19deg, #1FA2FF -3.62%, #12D8FA 50.44%, #A6FFCB 104.51%);
+      opacity: 0.2;
+      filter: blur(34px);
+      transform: matrix(1, 0, -0.03, 1, 0, 0);
+      
+      /* Inside auto layout */
+      
+      flex: none;
+      order: 0;
+      flex-grow: 0;
+      z-index: 0;
+  
+  }

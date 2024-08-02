@@ -1,0 +1,17 @@
+/* .swiper-container {
+    width: 500px;
+    height: 500px; /* Full viewport height */
+  
+  
+  /* .swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    height: 200px; /* Custom height for each slide */
+    .swiper-slide{
+      z-index: -1;
+    }
+    .swiper-container{
+      display: hidden;
+    }
